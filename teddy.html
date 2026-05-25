@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Teddy Holding Flower</title>
+
+<style>
+    body{
+        margin:0;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(to bottom,#87ceeb,#ffe6f2);
+        overflow:hidden;
+    }
+
+    .scene{
+        position:relative;
+        width:300px;
+        height:450px;
+    }
+
+    /* TEDDY */
+
+    .teddy{
+        position:absolute;
+        bottom:20px;
+        left:50%;
+        transform:translateX(-50%);
+        animation:float 3s ease-in-out infinite;
+    }
+
+    .head{
+        width:140px;
+        height:130px;
+        background:#b57b52;
+        border-radius:50%;
+        position:relative;
+        margin:auto;
+    }
+
+    .ear{
+        width:45px;
+        height:45px;
+        background:#b57b52;
+        border-radius:50%;
+        position:absolute;
+        top:-10px;
+    }
+
+    .ear::after{
+        content:"";
+        width:22px;
+        height:22px;
+        background:#d9a07b;
+        border-radius:50%;
+        position:absolute;
+        top:11px;
+        left:11px;
+    }
+
+    .left-ear{ left:5px; }
+    .right-ear{ right:5px; }
+
+    .eye{
+        width:10px;
+        height:10px;
+        background:black;
+        border-radius:50%;
+        position:absolute;
+        top:50px;
+    }
+
+    .left-eye{ left:40px; }
+    .right-eye{ right:40px; }
+
+    .nose{
+        width:24px;
+        height:18px;
+        background:#3b2b2b;
+        border-radius:50%;
+        position:absolute;
+        top:70px;
+        left:58px;
+    }
+
+    .mouth{
+        position:absolute;
+        top:88px;
+        left:62px;
+        width:16px;
+        height:8px;
+        border-bottom:3px solid #3b2b2b;
+        border-radius:0 0 20px 20px;
+    }
+
+    .body{
+        width:160px;
+        height:180px;
+        background:#b57b52;
+        border-radius:45%;
+        margin:auto;
+        margin-top:-10px;
+        position:relative;
+    }
+
+    .belly{
+        width:90px;
+        height:110px;
+        background:#d9a07b;
+        border-radius:50%;
+        position:absolute;
+        top:35px;
+        left:35px;
+    }
+
+    .arm{
+        width:45px;
+        height:120px;
+        background:#b57b52;
+        border-radius:30px;
+        position:absolute;
+        top:20px;
+        transform-origin:top center;
+    }
+
+    .left-arm{
+        left:-20px;
+        transform:rotate(25deg);
+    }
+
+    .right-arm{
+        right:-20px;
+        transform:rotate(-40deg);
+        animation:wave 2s infinite;
+    }
+
+    .leg{
+        width:50px;
+        height:80px;
+        background:#b57b52;
+        border-radius:30px;
+        position:absolute;
+        bottom:-35px;
+    }
+
+    .left-leg{ left:25px; }
+    .right-leg{ right:25px; }
+
+    /* FLOWER */
+
+    .flower{
+        position:absolute;
+        top:100px;
+        right:-70px;
+    }
+
+    .stem{
+        width:6px;
+        height:90px;
+        background:green;
+        margin:auto;
+    }
+
+    .petals{
+        position:relative;
+        width:60px;
+        height:60px;
+        margin:auto;
+        animation:spin 6s linear infinite;
+    }
+
+    .petal{
+        width:24px;
+        height:24px;
+        background:pink;
+        border-radius:50%;
+        position:absolute;
+    }
+
+    .p1{ top:0; left:18px; }
+    .p2{ bottom:0; left:18px; }
+    .p3{ left:0; top:18px; }
+    .p4{ right:0; top:18px; }
+
+    .center{
+        width:22px;
+        height:22px;
+        background:yellow;
+        border-radius:50%;
+        position:absolute;
+        top:19px;
+        left:19px;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes float{
+        0%,100%{
+            transform:translateX(-50%) translateY(0);
+        }
+        50%{
+            transform:translateX(-50%) translateY(-10px);
+        }
+    }
+
+    @keyframes wave{
+        0%,100%{
+            transform:rotate(-40deg);
+        }
+        50%{
+            transform:rotate(-20deg);
+        }
+    }
+
+    @keyframes spin{
+        from{
+            transform:rotate(0deg);
+        }
+        to{
+            transform:rotate(360deg);
+        }
+    }
+
+</style>
+</head>
+<body>
+
+<div class="scene">
+
+    <div class="teddy">
+
+        <div class="head">
+            <div class="ear left-ear"></div>
+            <div class="ear right-ear"></div>
+
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+
+            <div class="nose"></div>
+            <div class="mouth"></div>
+        </div>
+
+        <div class="body">
+            <div class="belly"></div>
+
+            <div class="arm left-arm"></div>
+
+            <div class="arm right-arm">
+                <div class="flower">
+                    <div class="petals">
+                        <div class="petal p1"></div>
+                        <div class="petal p2"></div>
+                        <div class="petal p3"></div>
+                        <div class="petal p4"></div>
+                        <div class="center"></div>
+                    </div>
+                    <div class="stem"></div>
+                </div>
+            </div>
+
+            <div class="leg left-leg"></div>
+            <div class="leg right-leg"></div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
